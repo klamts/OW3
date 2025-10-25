@@ -1,0 +1,107 @@
+db.grammar.insertOne({
+  grammar_name: "Too / Either for agreeing",
+  type: "agreement",
+
+  statements: [
+    {
+      subject: "I",
+      verb: "ride",
+      object: "my bike",
+      destination: "to school",
+      full_sentence: "I ride my bike to school.",
+      audio_path: "D:/english/Too_for_agreeing/I ride my bike to school.wav"
+    },
+    {
+      subject: "Eve",
+      verb: "takes",
+      object: "the bus",
+      destination: "to school",
+      full_sentence: "Eve takes the bus to school."
+      audio_path: "D:/english/Too_for_agreeing/Eve takes the bus to school.wav"
+    }
+  ],
+
+  agreeing: [
+    {
+      subject: "I",
+      response: "I do, too.",
+      audio_path: "D:/english/Too_for_agreeing/I do, too.wav"
+    },
+    {
+      subject: "Her friend",
+      response: "Her friend does, too.",
+      audio_path: "D:/english/Too_for_agreeing/Her friend does, too.wav"
+    }
+  ],
+
+  not_agreeing: [
+    {
+      subject: "I",
+      response: "I don’t. I walk.",
+      audio_path: "D:/english/Too_for_agreeing/I don't. I walk.wav"
+    },
+    {
+      subject: "Her friend",
+      response: "Her friend doesn’t. She drives.",
+      audio_path: "D:/english/Too_for_agreeing/Her friend doesn't. She drives.wav"
+    }
+  ],
+
+  examples: [
+    {
+      sentences: [
+        { text: "Rodrigo rides his bike to the bakery.",audio_path: "D:/english/Too_for_agreeing/Rodrigo rides his bike to the bakery.wav" }, 
+        { text: "His brother does, too.",audio_path: "D:/english/Too_for_agreeing/His brother does, too.wav" }               
+      ]
+    },
+    {
+      sentences: [
+        { text: "His mother takes a taxi to work.", audio_path: "D:/english/Too_for_agreeing/His mother takes a taxi to work.wav" },
+        { text: "His father doesn't.", audio_path: "D:/english/Too_for_agreeing/His father doesn't.wav" },
+        { text: "He takes a bus.", audio_path: "D:/english/Too_for_agreeing/He takes a bus.wav" }
+      ]
+    },
+    {
+      sentences: [
+        { text: "My sister rides her scooter to school.", audio_path: "D:/english/Too_for_agreeing/My sister rides her scooter to school.wav" },
+        { text: "I don't.", audio_path: "D:/english/Too_for_agreeing/I don't.wav" },
+        { text: "I walk.", audio_path: "D:/english/Too_for_agreeing/I walk.wav" }
+      ]
+    },
+    {
+      sentences: [
+        { text: "My grandfather takes a ferry.", audio_path: "D:/english/Too_for_agreeing/My grandfather takes a ferry.wav" },
+        { text: "I do, too.", audio_path: "D:/english/Too_for_agreeing/I do, too-2.wav" }
+      ]
+    }
+  ],
+
+  more_examples: [
+    {
+      sentences: [
+        { text: "My friend walks to the museum.", audio_path: "D:/english/Too_for_agreeing/My friend walks to the museum.wav" },
+        { text: "I do, too.", audio_path: "D:/english/Too_for_agreeing/I do, too-3.wav" }
+      ]
+    },
+    {
+      sentences: [
+        { text: "He rides a motorcycle to the post office.", audio_path: "D:/english/Too_for_agreeing/He rides a motorcycle to the post office.wav" },
+        { text: "I don't.", audio_path: "D:/english/Too_for_agreeing/I don't-2.wav" },
+        { text: "I take a bus.", audio_path: "D:/english/Too_for_agreeing/I take a bus.wav" }
+      ]
+    },
+    {
+      sentences: [
+        { text: "He takes the subway to school.", audio_path: "D:/english/Too_for_agreeing/He takes the subway to school.wav" },
+        { text: "I do, too.", audio_path: "D:/english/Too_for_agreeing/I do, too-4.wav" }
+      ]
+    },
+    {
+      sentences: [
+        { text: "He walks to the park.", audio_path: "D:/english/Too_for_agreeing/He walks to the park.wav" },
+        { text: "I don't.", audio_path: "D:/english/Too_for_agreeing/I don't-3.wav" },
+        { text: "I ride my bike.", audio_path: "D:/english/Too_for_agreeing/I ride my bike.wav" }
+      ]
+    }
+  ]
+});

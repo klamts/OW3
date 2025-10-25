@@ -1,0 +1,2 @@
+phải chạy https://192.168.1.21:3001 để mở khóa ip 
+và https://192.168.1.21:5173/hoithoai1/ mở khóa ip 

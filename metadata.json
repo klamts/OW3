@@ -1,0 +1,7 @@
+{
+  "name": "Dialogue Practice App",
+  "description": "An application to practice listening and speaking skills by following a scripted dialogue. Users can listen to pre-recorded lines and record their own voice for comparison.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}

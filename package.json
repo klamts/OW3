@@ -1,0 +1,25 @@
+{
+  "name": "dialogue-practice-app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "gh-pages -d dist"
+  },
+  "dependencies": {
+    "mongodb": "^6.20.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-xarrows": "^2.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "dotenv": "^17.2.2",
+    "gh-pages": "^6.3.0",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.0"
+  }
+}

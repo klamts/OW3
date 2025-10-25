@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dialogue Practice App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            animation: {
+              'pulse-red': 'pulse-red 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'fade-in': 'fade-in 0.5s ease-out',
+            },
+            keyframes: {
+              'pulse-red': {
+                '0%, 100%': { opacity: 1, boxShadow: '0 0 0 0 rgba(239, 68, 68, 0.7)' },
+                '50%': { opacity: 1, boxShadow: '0 0 0 0.5rem rgba(239, 68, 68, 0)' },
+              },
+              'fade-in': {
+                '0%': { opacity: '0', transform: 'translateY(10px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "multer": "https://aistudiocdn.com/multer@^2.0.2",
+    "http": "https://aistudiocdn.com/http@^0.0.1-security",
+    "cors": "https://aistudiocdn.com/cors@^2.8.5",
+    "url": "https://aistudiocdn.com/url@^0.11.4",
+    "fs": "https://aistudiocdn.com/fs@^0.0.1-security",
+    "path": "https://aistudiocdn.com/path@^0.12.7",
+    "os": "https://aistudiocdn.com/os@^0.1.2",
+    "https": "https://aistudiocdn.com/https@^1.0.0",
+    "mongodb": "https://aistudiocdn.com/mongodb@^6.19.0",
+    "express": "https://aistudiocdn.com/express@^5.1.0",
+    "react-xarrows": "https://aistudiocdn.com/react-xarrows@^2.0.2"
+  }
+}
+</script>
+</head>
+  <body class="bg-slate-100 dark:bg-slate-900">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
