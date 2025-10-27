@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import type { Unit1Vocabulary2Data, Vehicle } from '../../../types';
 import { VehicleCard } from '../../VehicleCard';
 import { EyeIcon, EyeOffIcon } from '../../IconComponents';
-import { ActivityCard, AudioButton, CheckAndResetButtons } from '../senses_workbook/shared';
+import { ActivityCard, AudioButton, CheckAndResetButtons,UserRecordingControls } from '../senses_workbook/shared';
 
 const TrueFalseExercise: React.FC<{ section: Unit1Vocabulary2Data['sections'][0], isTextVisible: boolean }> = ({ section, isTextVisible }) => {
     const [answers, setAnswers] = useState<(string | null)[]>(Array(section.sentences.length).fill(null));
@@ -26,6 +26,7 @@ const TrueFalseExercise: React.FC<{ section: Unit1Vocabulary2Data['sections'][0]
             <ActivityCard title="" instruction={isTextVisible ? section.instruction : ''} isTextVisible={true}>
                 <div className="space-y-4">
                     {section.sentences.map((q, index) => {
+                        console.log(q.audio);
                         const userAnswer = answers[index];
                         const isCorrect = userAnswer === q.answer;
                         return (
@@ -37,6 +38,7 @@ const TrueFalseExercise: React.FC<{ section: Unit1Vocabulary2Data['sections'][0]
                                             {isTextVisible ? q.sentence : '...'}
                                         </p>
                                         <AudioButton src={q.audio} />
+                                        <UserRecordingControls/>
                                     </div>
                                     <div className="flex-shrink-0 flex items-center gap-2 self-end sm:self-center">
                                         <button

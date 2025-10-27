@@ -51,6 +51,7 @@ const ReadingSection: React.FC<{ section: Unit2WritingReadingSection, isTextVisi
                                 )}
                             </div>
                             <AudioButton src={item.audio} />
+                            <UserRecordingControls></UserRecordingControls>
                         </div>
                     ))}
                 </div>

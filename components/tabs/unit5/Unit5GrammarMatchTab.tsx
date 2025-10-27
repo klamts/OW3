@@ -36,6 +36,7 @@ const AnswerItem: React.FC<{ item: AnimalHabitatsMatchQuestion; id: string; onCl
             {isTextVisible ? <span>{item.a}</span> : <span className="italic text-slate-400">Answer hidden</span>}
             <AudioButton src={item.audio_a} />
             <UserRecordingControls />
+            
         </div>
     );
 };

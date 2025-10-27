@@ -7,7 +7,7 @@ import type {
     Unit2Grammar1SpeakingSection
 } from '../../../types';
 import { EyeIcon, EyeOffIcon } from '../../IconComponents';
-import { ActivityCard, AudioButton, CheckAndResetButtons } from '../senses_workbook/shared';
+import { ActivityCard, AudioButton, CheckAndResetButtons,UserRecordingControls } from '../senses_workbook/shared';
 import Xarrow, { Xwrapper } from 'react-xarrows';
 
 // --- Sub-component: Grammar Examples ---
@@ -27,6 +27,7 @@ const GrammarExamples: React.FC<{ section: Unit2Grammar1GrammarSection, isTextVi
                         ) : <div className="h-10"></div>}
                     </div>
                     <AudioButton src={ex.audio} />
+                    <UserRecordingControls></UserRecordingControls>
                 </div>
             ))}
         </div>
@@ -109,10 +110,13 @@ const MatchingGame: React.FC<{ section: Unit2Grammar1MatchingSection, isTextVisi
                     <div className="mt-6 space-y-2">
                         <h4 className="font-bold">Correct Matches:</h4>
                         {section.correct_answers.map((ans, i) => (
+                            console.log(ans.audio),
                             <div key={i} className="flex items-center gap-2 text-sm p-2 bg-slate-100 dark:bg-slate-700/50 rounded-md">
                                 <p className="flex-grow"><strong>Q:</strong> {ans.left} <br/> <strong>A:</strong> {ans.right}</p>
                                 <AudioButton src={ans.audio}/>
+                                <UserRecordingControls></UserRecordingControls>
                             </div>
+                            
                         ))}
                     </div>
                  )}

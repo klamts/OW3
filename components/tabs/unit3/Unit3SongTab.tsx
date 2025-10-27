@@ -1,8 +1,8 @@
 import React, { useRef, useState } from 'react';
-import type { Unit1SongData } from '../../../types';
+import type { Unit3SongData } from '../../../types';
 import { VolumeUpIcon, EyeIcon, EyeOffIcon } from '../../IconComponents';
 
-export const Unit1SongTab: React.FC<{ data: Unit1SongData | null }> = ({ data }) => {
+export const Unit3SongTab: React.FC<{ data: Unit3SongData | null }> = ({ data }) => {
   const audioRef = useRef<HTMLAudioElement>(null);
   const [isTextVisible, setIsTextVisible] = useState(true);
 

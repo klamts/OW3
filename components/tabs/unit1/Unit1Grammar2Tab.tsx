@@ -80,6 +80,7 @@ const WritingExercise: React.FC<{ section: Unit1Grammar2WritingSection, isTextVi
                     {section.questions.map((q, index) => {
                         const isCorrect = normalize(answers[index]) === normalize(q.answer);
                         const parts = q.sentence.split('__');
+                        console.log(q.audio);
                         return (
                             <div key={index} className="p-3 border-t dark:border-slate-700">
                                 <div className="flex items-center gap-2 flex-wrap">

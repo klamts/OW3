@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 // FIX: Add missing type imports
-import type { Unit5GroupWorkSection,Unit5GuidedWritingSection,Unit5ReadWritePassageSection,AnimalHabitatsVocabSection,AnimalHabitatsQASection,Unit4SongData,ActiveTab, DialogueLine, Vehicle, GrammarTooEither, ProcessedPracticeBike2Item, ProcessedExampleVehicle, HotAirBalloonExercisesApiResponse, HotAirBalloonWeirdButTrueApiResponse, TheLionAndTheMouseExercisesApiResponse, SensesDescribeGuess, SensesSong, SensesGrammar1, SensesVocabulary2, SensesGrammar2, SensesReading, SensesWriting, SensesWorkbook, Unit5Data, SpinTabData, Unit5WorkbookData, Unit6Vocabulary1Data, Unit6SongData, Unit6GrammarData, Unit6Vocabulary2Data, Unit6Grammar2Data, Unit6ReadingData, Unit6WritingData, Unit6ExtendedReadingData, Unit6GameData, Unit6WorkbookData, Unit6Vocabulary3Data, Unit7Vocabulary1Data, Unit7Vocabulary2Data, Unit7Grammar1Data, Unit7GameData, Unit7Grammar2Data, Unit7SongData, Unit7ReadingData, Unit7WorkbookData, Unit7WritingData, Unit7ReviewData, Unit8Vocabulary1Data, Unit8Grammar1Data, Unit8Vocabulary2Data, Unit8Grammar2Data, Unit8ReadingData, Unit8WritingData, Unit8WorkbookData, Unit8GameData, Unit9Vocabulary1Data, Unit9Example, Unit9SongData, Unit9Grammar1Data,Unit9Grammar2Data, } from '../types';
+import type {Unit3ReadingData, Unit3Vocabulary2Data,Unit3Grammar1Data,Unit3SongData,Unit5GroupWorkSection,Unit5GuidedWritingSection,Unit5ReadWritePassageSection,AnimalHabitatsVocabSection,AnimalHabitatsQASection,Unit4SongData,ActiveTab, DialogueLine, Vehicle, GrammarTooEither, ProcessedPracticeBike2Item, ProcessedExampleVehicle, HotAirBalloonExercisesApiResponse, HotAirBalloonWeirdButTrueApiResponse, TheLionAndTheMouseExercisesApiResponse, SensesDescribeGuess, SensesSong, SensesGrammar1, SensesVocabulary2, SensesGrammar2, SensesReading, SensesWriting, SensesWorkbook, Unit5Data, SpinTabData, Unit5WorkbookData, Unit6Vocabulary1Data, Unit6SongData, Unit6GrammarData, Unit6Vocabulary2Data, Unit6Grammar2Data, Unit6ReadingData, Unit6WritingData, Unit6ExtendedReadingData, Unit6GameData, Unit6WorkbookData, Unit6Vocabulary3Data, Unit7Vocabulary1Data, Unit7Vocabulary2Data, Unit7Grammar1Data, Unit7GameData, Unit7Grammar2Data, Unit7SongData, Unit7ReadingData, Unit7WorkbookData, Unit7WritingData, Unit7ReviewData, Unit8Vocabulary1Data, Unit8Grammar1Data, Unit8Vocabulary2Data, Unit8Grammar2Data, Unit8ReadingData, Unit8WritingData, Unit8WorkbookData, Unit8GameData, Unit9Vocabulary1Data, Unit9Example, Unit9SongData, Unit9Grammar1Data,Unit9Grammar2Data, } from '../types';
 // Unit 1
 import { Unit1Vocabulary1Tab } from './tabs/unit1/Unit1Vocabulary1Tab';
 import { Unit1SongTab } from './tabs/unit1/Unit1SongTab';
@@ -42,7 +42,14 @@ import { ReadingTab } from './tabs/unit3/ReadingTab';
 import { HotAirBalloonsTab } from './tabs/unit3/HotAirBalloonsTab';
 import { CatchTheBusTab } from './tabs/unit3/CatchTheBusTab';
 import { TheLionAndTheMouseTab } from './tabs/unit3/TheLionAndTheMouseTab';
-
+import { Unit3Vocabulary1Tab } from './tabs/unit3/Unit3Vocabulary1Tab';
+import { Unit3SongTab } from './tabs/unit3/Unit3SongTab';
+import { Unit3Grammar1Tab } from './tabs/unit3/Unit3Grammar1Tab';
+import { Unit3Vocabulary2Tab } from './tabs/unit3/Unit3Vocabulary2Tab';
+import { Unit3Grammar2Tab } from './tabs/unit3/Unit3Grammar2Tab';
+import { Unit3ReadingTab } from './tabs/unit3/Unit3ReadingTab';
+import { Unit3WritingTab } from './tabs/unit3/Unit3WritingTab';
+import { Unit3ExtendedReadingTab } from './tabs/unit3/Unit3ExtendedReadingTab';
 // Unit 4
 import { SensesVocabulary1Tab } from './tabs/unit4/SensesVocabulary1Tab';
 import { SensesSongTab } from './tabs/unit4/SensesSongTab';
@@ -173,6 +180,11 @@ interface TabContentProps {
     unit2Grammar2Data: Unit2Grammar2Data | null;
     unit2ReadingData: Unit2ReadingData | null;
     unit2WritingData: Unit2WritingData | null;
+    unit3Vocabulary1Data: Unit3Vocabulary1Data | null;
+    unit3SongData: Unit3SongData | null;
+    unit3Grammar1Data: Unit3Grammar1Data | null;
+    unit3Vocabulary2Data: Unit3Vocabulary2Data | null;
+    unit3ReadingTabData:Unit3ReadingData | null;
     unit5Vocabulary1Data: AnimalHabitatsVocabSection | null;
     Unit5WritingTab:Unit5Data|Unit5GuidedWritingSection|Unit5ReadWritePassageSection|Unit5GroupWorkSection|null
     unit5Data: Unit5Data | null;
@@ -315,7 +327,24 @@ export const TabContent: React.FC<TabContentProps> = ({
     case 'unit2Reading':
         return <Unit2ReadingTab data={props.unit2ReadingData} />;
     case 'unit2Writing':
-      return <Unit2WritingTab data={props.unit2WritingData} />;                        
+      return <Unit2WritingTab data={props.unit2WritingData} />;   
+    // Unit 3
+    case 'unit3Vocabulary1':
+      return <Unit3Vocabulary1Tab data={props.unit3Vocabulary1Data}  />;
+    case 'unit3Song':
+      return <Unit3SongTab data={props.unit3SongData}  />;  
+    case 'unit3Grammar1':
+      return <Unit3Grammar1Tab data={props.unit3Grammar1Data} />; 
+    case 'unit3Vocabulary2':
+        return <Unit3Vocabulary2Tab data={props.unit3Vocabulary2Data} />;
+    case 'unit3Grammar2':
+        return <Unit3Grammar2Tab data={props.unit3Grammar2Data} />;     
+    case 'unit3Reading':
+        return <Unit3ReadingTab data={props.unit3readingData} />;    
+    case 'unit3Writing':
+        return <Unit3WritingTab data={props.unit3WritingData} />;  
+    case 'unit3ExtendedReading':
+        return <Unit3ExtendedReadingTab data={props.unit3ExtendedReadingData} />;                                    
     // Unit 4
     case 'sensesVocabulary1':
         return <SensesVocabulary1Tab data={props.unit4Vocabulary1Data}  />;

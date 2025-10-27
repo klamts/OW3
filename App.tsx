@@ -14,7 +14,7 @@ import {unit8Vocabulary1DataTS,unit8Grammar1DataTS,unit8Vocabulary2DataTS,unit8G
 import {unit7Vocabulary1DataTS,unit7Vocabulary2DataTS,unit7Grammar1DataTS,unit7GameDataTS,unit7Grammar2DataTS,unit7SongDataTS,unit7ReadingDataTS,unit7WritingDataTS,unit7ReviewDataTS,unit7WorkbookVocab1DataTS,unit7WorkbookSongDataTS,unit7WorkbookGrammar1DataTS,unit7WorkbookVocab2DataTS,unit7WorkbookGrammar2DataTS,unit7WorkbookGameTimeDataTS,unit7WorkbookReadingDataTS,unit7WorkbookWritingDataTS,unit7WorkbookReviewDataTS} from './data/Unit7_Feeling_Fit'
 import {Unit6_What_Is_For_DinnerTS,unit6Vocabulary1DataTS,unit6SongDataTS,unit6Grammar1DataTS,unit6Vocabulary2DataTS,unit6Vocabulary3DataTS,unit6Grammar2DataTS,unit6ReadingDataTS,unit6WritingDataTS,unit6ExtendedReadingDataTS,unit6GameDataTS} from './data/Unit6_What_Is_For_Dinner'
 // FIX: Imported missing types for Unit 6 writing examples.
-import type {Unit5WorkbookFix,Unit5WorkbookVocabSection,Unit4SongData,Unit4Vocabulary1Data, ActiveTab, DialogueLine, Vehicle, InOnLine, LikeVehicleLine, TakeRideFlyLine, GrammarTooEither, VocabularyApiResponse, PracticeBike2ApiResponse, ProcessedPracticeBike2Item, PracticeBike2Item, PracticeBike2Sentence, ContrastApiResponse, SayFastApiResponse, ReadingApiResponse, ExampleVehicleApiResponse, ProcessedExampleVehicle, HotAirBalloonReadingApiResponse, HotAirBalloonVocabularyApiResponse, HotAirBalloonExercisesApiResponse, HotAirBalloonWeirdButTrueApiResponse, HotAirBalloonFilesApiResponse, CatchTheBusReadingApiResponse, CatchTheBusVocabularyApiResponse, CatchTheBusFilesApiResponse, TheLionAndTheMouseReadingApiResponse, TheLionAndTheMouseVocabularyApiResponse, TheLionAndTheMouseFilesApiResponse, TheLionAndTheMouseExercisesApiResponse, SensesDescribeGuess, SensesSong, SensesGrammar1, SensesVocabulary2, SensesGrammar2, SensesReading, SensesWriting, SensesWorkbook, Unit5Data, SpinTabData, AnimalHabitatsVocabSection, AnimalHabitatsQASection, AnimalHabitatsSongSection, AnimalHabitatsGrammar1Section, AnimalHabitatsQAItem, AnimalHabitatsGrammar1Example, AnimalHabitatsMatchSection, AnimalHabitatsMatchQuestion, AnimalHabitatsReadWriteSection, AnimalHabitatsReadWriteItem, AnimalHabitatsAskAnswerSection, AnimalHabitatsAskAnswerItem, AnimalHabitatsVocab2Section, DragDropSection, AnimalHabitatsGrammar2Section, ReadMatchSection, DiceSection, ListenReadSection, ReadCircleSection, ChartCompletionSection, SpeakingSection, Unit6Vocabulary1Data, Unit6SongData, Unit6GrammarData, Unit6Vocabulary2Data, Unit6Grammar2Data, Unit6ReadingData, Unit5WorkbookData, Unit6WritingData, Unit6ExtendedReadingData, Unit6GameData, Unit6WorkbookData, Unit5WorkbookVocab2Section, Unit6Vocabulary3Data, Unit7Vocabulary1Data, Unit7Vocabulary2Data, Unit6Song_ReadAndSingSection, Unit6Song_ActivitySection, Unit7Grammar1Data, Unit7GameData, Unit7Grammar2Data, Unit7SongData, Unit7ReadingData, Unit7WorkbookData, Unit7WritingData, Unit7ReviewData, Unit8Vocabulary1Data, Unit8Grammar1Data, Unit8Vocabulary2Data, Unit8Grammar2Data, Unit8ReadingData, Unit8WritingData, Unit8WorkbookData, Unit8WorkbookVocabulary1Data, Unit8WorkbookSongData, Unit8WorkbookGrammar1Data, Unit8WorkbookVocabulary2Data, Unit8WorkbookGrammar2Data, Unit8GameData, ListenReadFastGameContent, Unit8WorkbookReadingData, Unit8WorkbookWritingData, Unit8WorkbookReviewData, Unit6WritingExample, Unit6WritingCheckExample, Unit9Vocabulary1Data, Unit9SongData, Unit9Grammar1Data, Unit9Grammar1Data as Unit9Grammar1DataType, Unit9Vocabulary2Data,Unit9Grammar2Data,Unit9ReadingData,Unit9WritingData,Unit9ExtendedReadingData,Unit2Vocabulary1Data,Unit2SongData,Unit2Grammar1Data,Unit2Vocabulary2Data,Unit2Grammar2Data,Unit2ReadingData,Unit2WritingData,Unit1Vocabulary1Data,Unit1SongData,Unit1Grammar1Data,Unit1Vocabulary2Data,Unit1Grammar2Data,Unit1ReadingData,Unit1WritingData } from './types';
+import type {UnitData,Unit3WritingData,Unit3ReadingData,Unit3Grammar1Data,Unit3Grammar2Data,Unit3Vocabulary2Data,Unit3SongData,Unit3Vocabulary1Data,Unit5WorkbookFix,Unit5WorkbookVocabSection,Unit4SongData,Unit4Vocabulary1Data, ActiveTab, DialogueLine, Vehicle, InOnLine, LikeVehicleLine, TakeRideFlyLine, GrammarTooEither, VocabularyApiResponse, PracticeBike2ApiResponse, ProcessedPracticeBike2Item, PracticeBike2Item, PracticeBike2Sentence, ContrastApiResponse, SayFastApiResponse, ReadingApiResponse, ExampleVehicleApiResponse, ProcessedExampleVehicle, HotAirBalloonReadingApiResponse, HotAirBalloonVocabularyApiResponse, HotAirBalloonExercisesApiResponse, HotAirBalloonWeirdButTrueApiResponse, HotAirBalloonFilesApiResponse, CatchTheBusReadingApiResponse, CatchTheBusVocabularyApiResponse, CatchTheBusFilesApiResponse, TheLionAndTheMouseReadingApiResponse, TheLionAndTheMouseVocabularyApiResponse, TheLionAndTheMouseFilesApiResponse, TheLionAndTheMouseExercisesApiResponse, SensesDescribeGuess, SensesSong, SensesGrammar1, SensesVocabulary2, SensesGrammar2, SensesReading, SensesWriting, SensesWorkbook, Unit5Data, SpinTabData, AnimalHabitatsVocabSection, AnimalHabitatsQASection, AnimalHabitatsSongSection, AnimalHabitatsGrammar1Section, AnimalHabitatsQAItem, AnimalHabitatsGrammar1Example, AnimalHabitatsMatchSection, AnimalHabitatsMatchQuestion, AnimalHabitatsReadWriteSection, AnimalHabitatsReadWriteItem, AnimalHabitatsAskAnswerSection, AnimalHabitatsAskAnswerItem, AnimalHabitatsVocab2Section, DragDropSection, AnimalHabitatsGrammar2Section, ReadMatchSection, DiceSection, ListenReadSection, ReadCircleSection, ChartCompletionSection, SpeakingSection, Unit6Vocabulary1Data, Unit6SongData, Unit6GrammarData, Unit6Vocabulary2Data, Unit6Grammar2Data, Unit6ReadingData, Unit5WorkbookData, Unit6WritingData, Unit6ExtendedReadingData, Unit6GameData, Unit6WorkbookData, Unit5WorkbookVocab2Section, Unit6Vocabulary3Data, Unit7Vocabulary1Data, Unit7Vocabulary2Data, Unit6Song_ReadAndSingSection, Unit6Song_ActivitySection, Unit7Grammar1Data, Unit7GameData, Unit7Grammar2Data, Unit7SongData, Unit7ReadingData, Unit7WorkbookData, Unit7WritingData, Unit7ReviewData, Unit8Vocabulary1Data, Unit8Grammar1Data, Unit8Vocabulary2Data, Unit8Grammar2Data, Unit8ReadingData, Unit8WritingData, Unit8WorkbookData, Unit8WorkbookVocabulary1Data, Unit8WorkbookSongData, Unit8WorkbookGrammar1Data, Unit8WorkbookVocabulary2Data, Unit8WorkbookGrammar2Data, Unit8GameData, ListenReadFastGameContent, Unit8WorkbookReadingData, Unit8WorkbookWritingData, Unit8WorkbookReviewData, Unit6WritingExample, Unit6WritingCheckExample, Unit9Vocabulary1Data, Unit9SongData, Unit9Grammar1Data, Unit9Grammar1Data as Unit9Grammar1DataType, Unit9Vocabulary2Data,Unit9Grammar2Data,Unit9ReadingData,Unit9WritingData,Unit9ExtendedReadingData,Unit2Vocabulary1Data,Unit2SongData,Unit2Grammar1Data,Unit2Vocabulary2Data,Unit2Grammar2Data,Unit2ReadingData,Unit2WritingData,Unit1Vocabulary1Data,Unit1SongData,Unit1Grammar1Data,Unit1Vocabulary2Data,Unit1Grammar2Data,Unit1ReadingData,Unit1WritingData } from './types';
 import {
     unit5Vocabulary1DataTS,
     unit5Grammar1DataTS,
@@ -75,6 +75,43 @@ import {unit4Vocabulary1DataTS,
         unit4SpinDataTasteActivityDataTS
 } 
 from './data/Unit4_Our_Senses'
+import {
+        unit3Vocabulary1DataTS,
+        unit3SongDataTS,
+        Unit3Grammar1DataTS,
+        unit3Vocabulary2DataTS,
+        unit3Grammar2DataTS,
+        unit3ReadingDataTS,
+        unit3WritingDataTS,
+        unit3TheLionAndTheMouseDataTS
+
+        
+
+} 
+
+from './data/Unit3_On_the_Move'
+import {unit2ReadingDataTS,
+        unit2WritingDataTS,
+        unit2Vocabulary1DataTS,
+        unit2SongDataTS,
+        unit2Grammar1DataTS,
+        unit2Vocabulary2DataTS,
+        unit2Grammar2DataTS
+        
+
+} 
+
+from './data/Unit2_My_Place_in_the_World'
+import {unit1Vocabulary1DataTS,
+        unit1SongDataTS,
+        unit1Grammar1DataTS,
+        unit1Vocabulary2DataTS,
+        unit1Grammar2DataTS,
+        unit1ReadingDataTS,
+        unit1WritingDataTS
+
+} 
+from './data/Unit1_A_Helping_Hand'
 // FIX: Added 'export' to the App component and changed the function definition to return JSX, resolving the component type error.
 export const App: React.FC = () => {
   // New state for navigation
@@ -145,6 +182,14 @@ export const App: React.FC = () => {
   const [unit2Grammar2Data, setUnit2Grammar2Data] = useState<Unit2Grammar2Data | null>(null); 
   const [unit2ReadingData, setUnit2ReadingData] = useState<Unit2ReadingData | null>(null);
   const [unit2WritingData, setUnit2WritingData] = useState<Unit2WritingData | null>(null); 
+  const [unit3Vocabulary1Data, setUnit3Vocabulary1Data] = useState<Unit3Vocabulary1Data | null>(null); 
+  const [unit3SongData, setUnit3SongData] = useState<Unit3SongData | null>(null);
+  const [unit3Grammar1Data, setUnit3Grammar1Data] = useState<Unit3Grammar1Data | null>(null);
+  const [unit3Vocabulary2Data, setUnit3Vocabulary2Data] = useState<Unit3Vocabulary2Data | null>(null);
+  const [unit3Grammar2Data, setUnit3Grammar2Data] = useState<Unit3Grammar2Data | null>(null);
+  const [unit3readingData, setUnit3ReadingData] = useState<Unit3ReadingData | null>(null);
+  const [unit3WritingData, setUnit3WritingData] = useState<Unit3ReadingData | null>(null);
+  const [unit3ExtendedReadingData, setUnit3ExtendedReadingData] = useState<UnitData | null>(null);
   const [unit5Vocabulary1Data, setUnit5Vocab1Data] = useState<AnimalHabitatsVocabSection | null>(null);
   const [unit5Grammar1Data, setUnit5Grammar1Data] = useState<Unit5Data | null>(null);
   const [unit5SongData, setUnit5SongData] = useState<Unit5Data | null>(null);
@@ -539,6 +584,29 @@ export const App: React.FC = () => {
         // const rawTheLionAndTheMouseVocabularyData: TheLionAndTheMouseVocabularyApiResponse[] = await theLionAndTheMouseVocabularyRes.json();
         // const rawTheLionAndTheMouseFilesData: TheLionAndTheMouseFilesApiResponse = await theLionAndTheMouseFilesRes.json();
         // const rawTheLionAndTheMouseExercisesData: TheLionAndTheMouseExercisesApiResponse = await theLionAndTheMouseExercisesRes.json();
+        const rawUnit1Vocabulary1Data=unit1Vocabulary1DataTS
+        const rawUnit1SongData=unit1SongDataTS
+        const rawUnit1Grammar1Data=unit1Grammar1DataTS
+        const rawUnit1Vocabulary2Data=unit1Vocabulary2DataTS
+        const rawUnit1Grammar2Data=unit1Grammar2DataTS
+        const rawUnit1ReadingData=unit1ReadingDataTS
+        const rawUnit1WritingData=unit1WritingDataTS
+        const rawUnit2ReadingData=unit2ReadingDataTS
+        const rawUnit2WritingData=unit2WritingDataTS
+        const rawUnit2Vocabulary1Data=unit2Vocabulary1DataTS
+        const rawUnit2SongData=unit2SongDataTS
+        const rawUnit2Grammar1Data=unit2Grammar1DataTS
+        const rawUnit2Vocabulary2Data=unit2Vocabulary2DataTS
+        const rawUnit2Grammar2Data=unit2Grammar2DataTS
+        const rawUnit3Vocabulary1Data=unit3Vocabulary1DataTS
+        console.log(rawUnit3Vocabulary1Data)
+        const rawUnit3SongData=unit3SongDataTS
+        const rawUnit3Grammar1Data=Unit3Grammar1DataTS
+        const rawUnit3Vocabulary2Data=unit3Vocabulary2DataTS
+        const rawUnit3Grammar2Data=unit3Grammar2DataTS
+        const rawUnit3ReadingData=unit3ReadingDataTS
+        const rawUnit3writingData=unit3WritingDataTS
+        const rawUnit3ExtendedReadingData=unit3TheLionAndTheMouseDataTS
         const rawSensesVocabulary1Data=unit4Vocabulary1DataTS
         const rawSensesSongData=unit4SongDataTS
         const rawSensesGrammar1Data=unit4Grammar1DataTS
@@ -2290,7 +2358,28 @@ const processUnit2Vocabulary1Data = (data: Unit2Vocabulary1Data): Unit2Vocabular
         
         
         
-        
+        setUnit1Vocabulary1Data(rawUnit1Vocabulary1Data)
+        setUnit1SongData(rawUnit1SongData);
+        setUnit1Grammar1Data(rawUnit1Grammar1Data);
+        setUnit1Vocabulary2Data(rawUnit1Vocabulary2Data);
+        setUnit1Grammar2Data(rawUnit1Grammar2Data);
+        setUnit1ReadingData(rawUnit1ReadingData);
+        setUnit1WritingData(rawUnit1WritingData);
+        setUnit2ReadingData(rawUnit2ReadingData);
+        setUnit2WritingData(rawUnit2WritingData);
+        setUnit2Vocabulary1Data(rawUnit2Vocabulary1Data);
+        setUnit2SongData(rawUnit2SongData);
+        setUnit2Grammar1Data(rawUnit2Grammar1Data);
+        setUnit2Vocabulary2Data(rawUnit2Vocabulary2Data);
+        setUnit2Grammar2Data(rawUnit2Grammar2Data);
+        setUnit3Vocabulary1Data(rawUnit3Vocabulary1Data);
+        setUnit3SongData(rawUnit3SongData)
+        setUnit3Grammar1Data(rawUnit3Grammar1Data)
+        setUnit3Vocabulary2Data(rawUnit3Vocabulary2Data)
+        setUnit3Grammar2Data(rawUnit3Grammar2Data)
+        setUnit3ReadingData(rawUnit3ReadingData)
+        setUnit3WritingData(rawUnit3writingData)
+        setUnit3ExtendedReadingData(rawUnit3ExtendedReadingData)
         setUnit4ReadingData(rawSensesReadingData);
         setUnit4WritingData(rawSensesWritingData);
         setSensesSpinData(rawSensesSpinData);
@@ -2342,7 +2431,7 @@ const processUnit2Vocabulary1Data = (data: Unit2Vocabulary1Data): Unit2Vocabular
             gameTimeWorkbook:rawUnit5WorkbookGameTimePuzzleSectionData
 
         })
-        console.log(rawUnit5WorkbookVocabSectionData)
+        console.log(rawUnit1Vocabulary1Data)
         // useEffect(() => {
         //     if (sensesWorkbook?.circleActivity) {
         //         console.log("Updated circleActivity:", sensesWorkbook.circleActivity);
@@ -2505,6 +2594,14 @@ const processUnit2Vocabulary1Data = (data: Unit2Vocabulary1Data): Unit2Vocabular
                 unit2Grammar2Data={unit2Grammar2Data}
                 unit2ReadingData={unit2ReadingData}
                 unit2WritingData={unit2WritingData}
+                unit3Vocabulary1Data={unit3Vocabulary1Data}
+                unit3ExtendedReadingData={unit3ExtendedReadingData}
+                unit3SongData={unit3SongData}
+                unit3Grammar1Data={unit3Grammar1Data}
+                unit3Grammar2Data={unit3Grammar2Data}
+                unit3Vocabulary2Data={unit3Vocabulary2Data}
+                unit3readingData={unit3readingData}
+                unit3WritingData={unit3WritingData}
                 unit5Vocabulary1Data={unit5Vocabulary1Data} 
                 unit5Grammar1Data={unit5Grammar1Data}
                 unit5SongData={unit5SongData}

@@ -1,19 +1,21 @@
 import React, { useState } from 'react';
-import type { Unit1WritingData, Unit1WritingReadingSection, Unit1WritingWritingSection, Unit1WritingSpeakingSection } from '../../../types';
+import type { Unit3WritingData, Unit3WritingReadingSection, Unit3WritingWritingSection, Unit3WritingSpeakingSection } from '../../../types';
 import { EyeIcon, EyeOffIcon } from '../../IconComponents';
 import { ActivityCard, AudioButton, UserRecordingControls } from '../senses_workbook/shared';
 
-const ReadingSection: React.FC<{ section: Unit1WritingReadingSection, isTextVisible: boolean }> = ({ section, isTextVisible }) => {
+const ReadingSection: React.FC<{ section: Unit3WritingReadingSection, isTextVisible: boolean }> = ({ section, isTextVisible }) => {
     const [underlined, setUnderlined] = useState<number[]>([]);
 
     const toggleUnderline = (index: number) => {
-        setUnderlined(prev => 
-            prev.includes(index) ? prev.filter(i => i !== index) : [...prev, index]
-        );
+        if (section.content[index].sentence.toLowerCase().includes('and')) {
+            setUnderlined(prev => 
+                prev.includes(index) ? prev.filter(i => i !== index) : [...prev, index]
+            );
+        }
     };
 
     const highlightAnd = (text: string) => {
-        return text.replace(/\b(and)\b/gi, '<strong class="text-blue-500 font-bold">$1</strong>');
+        return text.replace(/\b(but)\b/gi, '<strong class="text-blue-500 font-bold">$1</strong>');
     };
 
     const mainImages = section.content[0]?.images || [];
@@ -24,7 +26,7 @@ const ReadingSection: React.FC<{ section: Unit1WritingReadingSection, isTextVisi
             <ActivityCard title="" instruction={isTextVisible ? section.title_vi : section.title} isTextVisible={true}>
                 <div className="flex flex-wrap justify-center gap-4 mb-6">
                     {mainImages.map((img, i) => (
-                        <img key={i} src={img} alt="A zookeeper's day" className="w-full sm:w-1/2 md:w-1/3 rounded-lg shadow-md" />
+                        <img key={i} src={img} alt="My special place" className="w-full sm:w-1/2 md:w-1/3 rounded-lg shadow-md" />
                     ))}
                 </div>
                 <div className="space-y-3">
@@ -58,10 +60,10 @@ const ReadingSection: React.FC<{ section: Unit1WritingReadingSection, isTextVisi
     );
 };
 
-const WritingTaskSection: React.FC<{ section: Unit1WritingWritingSection, isTextVisible: boolean }> = ({ section, isTextVisible }) => (
+const WritingSection: React.FC<{ section: Unit3WritingWritingSection, isTextVisible: boolean }> = ({ section, isTextVisible }) => (
     <section>
         <h3 className="text-2xl font-semibold mb-2 text-slate-800 dark:text-slate-200">{section.section}</h3>
-        <ActivityCard title={isTextVisible ? section.title_vi : section.title} instruction={isTextVisible ? section.instruction_vi : section.instruction} isTextVisible={true}>
+        <ActivityCard title={isTextVisible ? section.title : section.title_vi} instruction={isTextVisible ? section.instruction : section.instruction_vi} isTextVisible={true}>
             <textarea
                 className="w-full h-48 p-3 border-2 border-slate-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-slate-50 dark:bg-slate-800"
                 placeholder={isTextVisible ? section.input.placeholder_vi : section.input.placeholder}
@@ -73,24 +75,26 @@ const WritingTaskSection: React.FC<{ section: Unit1WritingWritingSection, isText
     </section>
 );
 
-const ShareSection: React.FC<{ section: Unit1WritingSpeakingSection, isTextVisible: boolean }> = ({ section, isTextVisible }) => (
+const SpeakingSection: React.FC<{ section: Unit3WritingSpeakingSection, isTextVisible: boolean }> = ({ section, isTextVisible }) => (
     <section>
         <h3 className="text-2xl font-semibold mb-2 text-slate-800 dark:text-slate-200">{section.section}</h3>
-        <ActivityCard title={isTextVisible ? section.title_vi : section.title} instruction="" isTextVisible={true}>
+        <ActivityCard title={isTextVisible ? section.title : section.title_vi} instruction={isTextVisible ? section.instruction : section.instruction_vi} isTextVisible={true}>
              <div className="overflow-x-auto">
                 <table className="w-full text-sm text-left border-collapse">
                     <thead className="bg-slate-100 dark:bg-slate-700">
                         <tr>
-                            {(isTextVisible ? section.table.columns_vi : section.table.columns).map(col => (
-                                <th key={col} className="p-3 font-semibold border-b-2 border-slate-200 dark:border-slate-600">{col}</th>
-                            ))}
+                            {isTextVisible ? section.table.columns.map(col => <th key={col} className="p-3 font-semibold border-b-2 border-slate-200 dark:border-slate-600">{col}</th>)
+                             : section.table.columns_vi.map(col => <th key={col} className="p-3 font-semibold border-b-2 border-slate-200 dark:border-slate-600">{col}</th>)
+                            }
                         </tr>
                     </thead>
                     <tbody>
                         {section.table.rows.map((_, rowIndex) => (
                              <tr key={rowIndex} className="border-b border-slate-200 dark:border-slate-700">
                                 {section.table.columns.map((_, colIndex) => (
-                                    <td key={colIndex} className="p-1"><input type="text" className="w-full p-2 bg-transparent rounded focus:outline-none focus:ring-1 focus:ring-blue-500" /></td>
+                                    <td key={colIndex} className="p-1">
+                                        <input type="text" className="w-full p-2 bg-transparent rounded focus:outline-none focus:ring-1 focus:ring-blue-500" />
+                                    </td>
                                 ))}
                              </tr>
                         ))}
@@ -107,11 +111,11 @@ const ShareSection: React.FC<{ section: Unit1WritingSpeakingSection, isTextVisib
 );
 
 
-export const Unit1WritingTab: React.FC<{ data: Unit1WritingData | null }> = ({ data }) => {
+export const Unit3WritingTab: React.FC<{ data: Unit3WritingData | null }> = ({ data }) => {
     const [isTextVisible, setIsTextVisible] = useState(true);
 
     if (!data) {
-        return <div className="text-center p-10">Loading Unit 1 Writing data...</div>;
+        return <div className="text-center p-10">Loading Unit 2 Writing data...</div>;
     }
 
     return (
@@ -130,11 +134,11 @@ export const Unit1WritingTab: React.FC<{ data: Unit1WritingData | null }> = ({ d
             {data.sections.map((section, index) => {
                 switch(section.type) {
                     case 'Reading':
-                        return <ReadingSection key={index} section={section as Unit1WritingReadingSection} isTextVisible={isTextVisible} />;
+                        return <ReadingSection key={index} section={section as Unit3WritingReadingSection} isTextVisible={isTextVisible} />;
                     case 'Writing':
-                        return <WritingTaskSection key={index} section={section as Unit1WritingWritingSection} isTextVisible={isTextVisible} />;
+                        return <WritingSection key={index} section={section as Unit3WritingWritingSection} isTextVisible={isTextVisible} />;
                     case 'Speaking':
-                        return <ShareSection key={index} section={section as Unit1WritingSpeakingSection} isTextVisible={isTextVisible} />;
+                        return <SpeakingSection key={index} section={section as Unit3WritingSpeakingSection} isTextVisible={isTextVisible} />;
                     default:
                         return null;
                 }

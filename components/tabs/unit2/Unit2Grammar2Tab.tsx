@@ -9,7 +9,7 @@ import type {
     Unit2Grammar2SpeakingSection
 } from '../../../types';
 import { EyeIcon, EyeOffIcon } from '../../IconComponents';
-import { ActivityCard, AudioButton, CheckAndResetButtons } from '../senses_workbook/shared';
+import { ActivityCard, AudioButton, CheckAndResetButtons,UserRecordingControls } from '../senses_workbook/shared';
 
 // --- Sub-component: Grammar Examples ---
 const GrammarExamples: React.FC<{ section: Unit2Grammar1GrammarSection, isTextVisible: boolean }> = ({ section, isTextVisible }) => (
@@ -28,6 +28,7 @@ const GrammarExamples: React.FC<{ section: Unit2Grammar1GrammarSection, isTextVi
                         ) : <div className="h-10"></div>}
                     </div>
                     <AudioButton src={ex.audio} />
+                    <UserRecordingControls></UserRecordingControls>
                 </div>
             ))}
         </div>
@@ -85,6 +86,7 @@ const FollowAndWrite: React.FC<{ section: Unit2Grammar2WritingSection, isTextVis
                                             {isCorrect ? 'Correct!' : `Incorrect. The answer is: ${s.answer}`}
                                         </p>
                                         <AudioButton src={s.audio} />
+                                        <UserRecordingControls></UserRecordingControls>
                                     </div>
                                 )}
                             </div>

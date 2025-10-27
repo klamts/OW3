@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import type { Unit2ReadingData, Unit2ReadingListenReadSection, Unit2ReadingFunFactSection, Unit2ReadingTrueFalseSection, Unit2ReadingActivitySection } from '../../../types';
 import { EyeIcon, EyeOffIcon, ChevronLeftIcon, ChevronRightIcon, LightBulbIcon } from '../../IconComponents';
-import { ActivityCard, AudioButton, CheckAndResetButtons } from '../senses_workbook/shared';
+import { ActivityCard, AudioButton, CheckAndResetButtons,UserRecordingControls } from '../senses_workbook/shared';
 
 
 const ListenRead: React.FC<{ section: Unit2ReadingListenReadSection, isTextVisible: boolean }> = ({ section, isTextVisible }) => {
@@ -29,6 +29,7 @@ const ListenRead: React.FC<{ section: Unit2ReadingListenReadSection, isTextVisib
                         )}
                     </div>
                     <AudioButton src={currentItem.audio} />
+                    <UserRecordingControls/>    
                 </div>
             </ActivityCard>
         </section>
@@ -61,6 +62,7 @@ const FunFact: React.FC<{ section: Unit2ReadingFunFactSection, isTextVisible: bo
                             )}
                         </div>
                         <AudioButton src={currentItem.audio} />
+                        <UserRecordingControls/>
                     </div>
                 </div>
             </ActivityCard>
@@ -87,6 +89,7 @@ const TrueFalse: React.FC<{ section: Unit2ReadingTrueFalseSection, isTextVisible
                                 <div className="flex-grow flex items-center gap-2">
                                     <p className="flex-grow">{isTextVisible && `${index + 1}. ${q.question}`}</p>
                                     <AudioButton src={q.audio} />
+                                    <UserRecordingControls/>
                                 </div>
                                 <div className="flex-shrink-0 flex items-center gap-2">
                                     <button onClick={() => !checked && setAnswers(p => {const n=[...p]; n[index]='T'; return n;})} className={`w-12 h-10 font-bold rounded-md border-2 ${checked ? (q.correct_answer === 'T' ? 'bg-emerald-500 text-white' : (userAnswer === 'T' ? 'bg-red-500 text-white' : '')) : (userAnswer === 'T' ? 'bg-blue-500 text-white' : 'border-slate-300 dark:border-slate-600')}`}>T</button>

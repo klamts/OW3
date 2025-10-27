@@ -128,7 +128,7 @@ const SpeakingPractice: React.FC<{ section: Unit1Grammar1SpeakingSection, isText
 
 export const Unit1Grammar1Tab: React.FC<{ data: Unit1Grammar1Data | null }> = ({ data }) => {
     const [isTextVisible, setIsTextVisible] = useState(true);
-
+    console.log("Unit1Grammar1Tab data:", data);
     if (!data) {
         return <div className="text-center p-10">Loading Unit 1 Grammar data...</div>;
     }

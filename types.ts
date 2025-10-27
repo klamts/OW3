@@ -1944,6 +1944,521 @@ export interface Unit2WritingData {
     title: 'Unit 2 – Writing';
     sections: Unit2WritingSection[];
 }
+// Unit 3
+
+export interface VocabularyExample {
+  "sentence": string;
+  "translation": string;
+  "audio": string;
+}
+
+export interface VocabularyWord {
+  "word": string;
+  "ipa": string;
+  "translation": string;
+  "image": string;
+  "audio": string;
+  "example": VocabularyExample;
+}
+
+export interface Vocabulary1ListenAndReadSection {
+  "slug": string; // ví dụ: "listen_and_read"
+  "section": string; // ví dụ: "Listen and Read"
+  "type": "Vocabulary";
+  "instruction": string; // ví dụ: "Listen, read, and learn the words."
+  "words": VocabularyWord[];
+}
+
+export interface DescribeAndGuessExample {
+  "description": string;
+  "answer": string;
+  "audio": string;
+  "image": string;
+}
+
+export interface Vocabulary1DescribeAndGuessSection {
+  "slug": string; // ví dụ: "describe_and_guess"
+  "section": string; // ví dụ: "Describe and Guess"
+  "type": "Speaking";
+  "instruction": string; // ví dụ: "Listen, describe, and guess the place."
+  "examples": DescribeAndGuessExample[];
+}
+
+export interface Unit3Vocabulary1Data {
+  "slug": string; // "unit3_vocabulary1"
+  "unit": string; // "Unit 3 – On the Move!"
+  "title": string; // "VOCABULARY 1 – On the Move"
+  "sections": (Vocabulary1ListenAndReadSection | Vocabulary1DescribeAndGuessSection)[];
+}
+// Unit 3 - Song
+export interface Unit3SongLyrics {
+    text: string;
+    translation: string;
+}
+
+export interface Unit3SongSection {
+    slug: 'listen_read_and_sing';
+    section: string;
+    type: 'Song';
+    title: string;
+    instruction: string;
+    audio: string;
+    lyrics: Unit2SongLyrics[];
+}
+
+export interface Unit3SongData {
+    slug: string;
+    title: string;
+    sections: Unit2SongSection[];
+}
+// ===============================
+// 📘 UNIT 3 – GRAMMAR 1 TYPES
+// ===============================
+
+export interface Unit3Grammar1TooForAgreeingItem {
+  sentence_en: string;
+  sentence_vn: string;
+  audio: string;
+}
+
+export interface Unit3Grammar1TooForAgreeingSection {
+  slug: string;
+  section: string;
+  type: "Grammar";
+  instruction: string;
+  instruction_vn: string;
+  items: Unit3Grammar1TooForAgreeingItem[];
+}
+
+// -------------------------------
+
+export interface Unit3Grammar1QuestionItem {
+  question: string;
+  answer: string;
+  audio: string;
+}
+
+export interface Unit3Grammar1ReadWriteSection {
+  slug: string;
+  section: string;
+  type: "Writing";
+  instruction: string;
+  instruction_vn: string;
+  questions: Unit3Grammar1QuestionItem[];
+}
+
+// -------------------------------
+
+export interface Unit3Grammar1TableRow {
+  Name: string;
+  Scooter: string;
+  Bus: string;
+  Walk: string;
+  Bike: string;
+}
+
+export interface Unit3Grammar1ListenCheckSection {
+  slug: string;
+  section: string;
+  type: "Listening";
+  instruction: string;
+  instruction_vn: string;
+  audio: string;
+  table: {
+    columns: string[];
+    rows: Unit3Grammar1TableRow[];
+  };
+}
+
+// -------------------------------
+
+export interface Unit3Grammar1LookWriteExample {
+  example_en: string;
+  example_vn: string;
+}
+
+export interface Unit3Grammar1LookWriteSection {
+  slug: string;
+  section: string;
+  type: "Writing";
+  instruction: string;
+  instruction_vn: string;
+  examples: Unit3Grammar1LookWriteExample[];
+  inputs: { placeholder: string }[];
+}
+
+// -------------------------------
+
+export interface Unit3Grammar1SpeakingExample {
+  question_en: string;
+  answer_en: string;
+  question_vn: string;
+  answer_vn: string;
+  audio: string;
+}
+
+export interface Unit3Grammar1SpeakingSection {
+  slug: string;
+  section: string;
+  type: "Speaking";
+  instruction: string;
+  instruction_vn: string;
+  examples: Unit3Grammar1SpeakingExample[];
+}
+
+// -------------------------------
+
+export interface Unit3Grammar1Data {
+  slug: string;
+  unit: string;
+  title: string;
+  sections: (
+    | Unit3Grammar1TooForAgreeingSection
+    | Unit3Grammar1ReadWriteSection
+    | Unit3Grammar1ListenCheckSection
+    | Unit3Grammar1LookWriteSection
+    | Unit3Grammar1SpeakingSection
+  )[];
+}
+
+// Unit 3 - Vocabulary 1
+export interface Unit3VocabWord {
+    word: string;
+    translation: string;
+    ipa: string;
+    audio: string;
+    image: string;
+    example: {
+        sentence: string;
+        translation: string;
+        audio: string;
+    };
+}
+
+export interface Unit3Vocabulary2VocabSection {
+    slug: 'listen_and_read';
+    section: string;
+    type: 'Vocabulary';
+    instruction: string;
+    words: Unit2VocabWord[];
+}
+
+export interface Unit3SpeakingWord {
+    word: string;
+    translation: string;
+    audio: string;
+}
+
+export interface Unit3SpeakingExample {
+    description: string;
+    translation: string;
+    answer: string;
+    audio: string;
+}
+
+export interface Unit3Vocabulary2WritingSection {
+    slug: 'describe_and_guess';
+    section: string;
+    type: 'Speaking';
+    instruction: string;
+    word_box: Unit2SpeakingWord[];
+    examples: Unit2SpeakingExample[];
+}
+
+export type Unit3Vocabulary2Section = Unit3Vocabulary2VocabSection | Unit3Vocabulary2WritingSection;
+
+export interface Unit3Vocabulary2Data {
+    slug: string;
+    title: string;
+    sections: Unit2Vocabulary1Section[];
+}// 🧩 Unit 3 – Grammar 2 Types
+export interface Unit3Grammar2Data {
+  slug: string;
+  unit: string;
+  section: string;
+  title: string;
+  type: string; // "Workbook"
+  sections: Unit3Grammar2Section[];
+}
+
+export interface Unit3Grammar2Section {
+  section_name: string;
+  instruction: string;
+  instruction_vn: string;
+  type: "Grammar" | "Activity" | "Game";
+  layout?: string; // "2-column" cho phần Activity
+  content: (
+    | GrammarContent[]
+    | ActivityContent[]
+    | GameContent[]
+  );
+}
+
+// 🔹 Section 1 – Grammar content
+export interface GrammarContent {
+  sentence_en: string;
+  sentence_vn: string;
+  audio: string;
+}
+
+// 🔹 Section 2 – Activity content (2 cột hình ảnh)
+export interface ActivityContent {
+  image_left: string;
+  image_right: string;
+  question: string;
+  answer: string;
+  audio_question: string;
+  audio_answer: string;
+}
+
+// 🔹 Section 3 – Game content (gồm 3 ví dụ)
+export interface GameContent {
+  example_1: GameExample;
+  example_2: GameExample;
+  example_3: GameExample;
+}
+
+export interface GameExample {
+  sentence: string;
+  result: string;
+  audio: string;
+}
+export interface Unit3Grammar2Item {
+  question: string;
+  answer: string;
+}
+
+export interface Unit3Grammar2DataType {
+  slug: string;
+  title: string;
+  instruction: string;
+  items: Unit3Grammar2Item[];
+}
+// Type for a single dialogue line used in the reading section and other components
+export interface DialogueLine {
+  id: string;
+  text: string;
+  translation?: string;
+  audioSrc?: string;
+}
+
+// Type for the content of the "Listen and read" section
+export interface ReadingContent {
+  sentence: string;
+  translation: string;
+  audio: string;
+}
+
+// Type for a true/false question
+export interface TrueFalseQuestion {
+  sentence: string;
+  translation: string;
+  answer: 'T' | 'F';
+}
+
+// Type for a sentence in the order sentences section
+export interface OrderSentence {
+  sentence: string;
+  translation: string;
+  order: number;
+}
+
+// Type for an example in the speaking/describe section
+export interface DescribeExample {
+  sentence: string;
+  translation: string;
+  audio: string;
+}
+
+// Type for the weird but true content
+export interface WeirdButTrueContent {
+  sentence: string;
+  translation: string;
+  audio: string;
+}
+
+// Type for each section in the unit data
+export interface UnitSection {
+  slug: string;
+  section: string;
+  type: 'Reading' | 'ReadingComprehension' | 'Ordering' | 'Speaking' | 'WeirdButTrue';
+  instruction: string;
+  image?: string;
+  content?: ReadingContent[];
+  questions?: TrueFalseQuestion[];
+  sentences?: OrderSentence[];
+  examples?: DescribeExample[];
+}
+
+// Type for the entire unit data structure
+export interface Unit3ReadingData {
+  slug: string;
+  title: string;
+  sections: UnitSection[];
+}
+// export interface HotAirBalloonExerciseQuestion {
+//   q: string;
+//   vi: string;
+//   audioSrc: string;
+// }
+
+// export interface HotAirBalloonExercisesApiResponse {
+//   true_false: {
+//     instructions: string;
+//     instructions_vi: string;
+//     instructionsAudioSrc: string;
+//     questions: HotAirBalloonExerciseQuestion[];
+//   };
+//   order_sentences: {
+//     instructions: string;
+//     instructions_vi: string;
+//     instructionsAudioSrc: string;
+//     sentences: string[];
+//     sentences_vi: string[];
+//     sentencesAudioSrc: string[];
+//   };
+//   describe: {
+//     instructions: string;
+//     instructions_vi: string;
+//     instructionsAudioSrc: string;
+//     example_answer: string;
+//     example_answer_vi: string;
+//     exampleAnswerAudioSrc: string[];
+//   };
+// }
+
+// export interface HotAirBalloonWeirdButTrueApiResponse {
+//   text: string;
+//   vi: string;
+//   audioSrc: string;
+// }
+
+// Unit 2 - Writing
+export interface Unit3WritingContent {
+    sentence: string;
+    translation: string;
+    audio: string;
+    images?: string[];
+}
+
+export interface Unit3WritingReadingSection {
+    slug: 'Read_about_My_special_place';
+    section: 'Read';
+    type: 'Reading';
+    title: string;
+    title_vi: string;
+    content: Unit2WritingContent[];
+}
+
+export interface Unit3WritingWritingSection {
+    slug: 'write_about_special_place';
+    section: 'Write';
+    type: 'Writing';
+    title: string;
+    title_vi: string;
+    instruction: string;
+    instruction_vi: string;
+    input: {
+        placeholder: string;
+        placeholder_vi: string;
+    };
+}
+
+export interface Unit3WritingSpeakingSection {
+    slug: 'share_your_writing';
+    section: 'Share';
+    type: 'Speaking';
+    title: string;
+    title_vi: string;
+    table: {
+        columns: string[];
+        columns_vi: string[];
+        rows: string[][];
+    };
+}
+
+export type Unit3WritingSection = 
+    | Unit3WritingReadingSection
+    | Unit3WritingWritingSection
+    | Unit3WritingSpeakingSection;
+
+export interface Unit3WritingData {
+    _id: string;
+    slug: 'unit3_writing';
+    title: 'Unit 3 – Writing';
+    sections: Unit2WritingSection[];
+}
+// types.ts
+
+export interface ReadingItem {
+  id: string;
+  text: string;
+  translation: string;
+  audioSrc: string;
+}
+
+export interface VocabularyItem {
+  id: string;
+  word: string;
+  translation: string;
+  audioSrc: string;
+  imageSrc: string;
+}
+
+export interface ExerciseSentence {
+  text: string;
+  translation: string;
+  audioSrc: string;
+  order?: number; // chỉ áp dụng cho order_story
+}
+
+export interface DescribeAnimalsExample {
+  text: string;
+  translation: string;
+}
+
+export interface DescribeAnimalsTable {
+  subject: string;
+  imageSrc: string;
+  example_sentences: DescribeAnimalsExample[];
+}
+
+export interface ExpressYourselfActivity {
+  option: string;
+  text: string;
+  translation: string;
+  audioSrc: string;
+}
+
+export interface Exercises {
+  order_story: {
+    instructions: string;
+    instructions_vi: string;
+    instructionsAudio: string;
+    sentences: ExerciseSentence[];
+  };
+  describe_animals: {
+    instructions: string;
+    instructions_vi: string;
+    word_box: string[];
+    word_box_vi: string[];
+    tables: DescribeAnimalsTable[];
+  };
+  express_yourself: {
+    instructions: string;
+    instructions_vi: string;
+    activities: ExpressYourselfActivity[];
+  };
+}
+
+export interface UnitData {
+  slug: string;
+  title: string;
+  reading: ReadingItem[];
+  readingImage: string;
+  vocabulary: VocabularyItem[];
+  exercises: Exercises;
+}
 
 // Unit 5 - Animal Habitats
 export interface AnimalHabitatsVocabItem {

@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import type { Unit1ReadingData, Unit1ReadingReadingSection, Unit1ReadingComprehensionSection, Unit1ReadingOrderingSection, Unit1ReadingSpeakingSection, DialogueLine } from '../../../types';
 import { EyeIcon, EyeOffIcon, ChevronLeftIcon, ChevronRightIcon } from '../../IconComponents';
-import { ActivityCard, AudioButton, CheckAndResetButtons } from '../senses_workbook/shared';
+import { ActivityCard, AudioButton, CheckAndResetButtons,UserRecordingControls } from '../senses_workbook/shared';
 import { DialogueLine as DialogueLineComponent } from '../../DialogueLine';
 
 const Reading: React.FC<{ section: Unit1ReadingReadingSection, isTextVisible: boolean }> = ({ section, isTextVisible }) => {
@@ -30,6 +30,7 @@ const Reading: React.FC<{ section: Unit1ReadingReadingSection, isTextVisible: bo
                         )}
                     </div>
                     <AudioButton src={currentItem.audio} />
+                    <UserRecordingControls></UserRecordingControls>
                 </div>
             </ActivityCard>
         </section>

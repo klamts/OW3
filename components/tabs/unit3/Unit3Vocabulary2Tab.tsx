@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import type { Unit2Vocabulary2Data, Unit2Vocabulary2VocabSection, Unit2Vocabulary2WritingSection, Vehicle } from '../../../types';
+import type { Unit3Vocabulary2Data, Unit3Vocabulary2VocabSection, Unit3Vocabulary2WritingSection, Vehicle } from '../../../types';
 import { EyeIcon, EyeOffIcon } from '../../IconComponents';
 import { VehicleCard } from '../../VehicleCard';
 import { ActivityCard, AudioButton, CheckAndResetButtons,UserRecordingControls } from '../senses_workbook/shared';
 
 // --- Sub-component: Vocabulary List ---
-const VocabularySection: React.FC<{ section: Unit2Vocabulary2VocabSection; isTextVisible: boolean }> = ({ section, isTextVisible }) => {
+const VocabularySection: React.FC<{ section: Unit3Vocabulary2VocabSection; isTextVisible: boolean }> = ({ section, isTextVisible }) => {
     const [activeCardId, setActiveCardId] = useState<string | null>(null);
 
     return (
@@ -42,7 +42,7 @@ const VocabularySection: React.FC<{ section: Unit2Vocabulary2VocabSection; isTex
 };
 
 // --- Sub-component: Fill in the Blanks ---
-const FillInTheBlanksSection: React.FC<{ section: Unit2Vocabulary2WritingSection; isTextVisible: boolean }> = ({ section, isTextVisible }) => {
+const FillInTheBlanksSection: React.FC<{ section: Unit3Vocabulary2WritingSection; isTextVisible: boolean }> = ({ section, isTextVisible }) => {
     const [answers, setAnswers] = useState<string[]>(Array(section.sentences.length).fill(''));
     const [checked, setChecked] = useState(false);
 
@@ -103,7 +103,7 @@ const FillInTheBlanksSection: React.FC<{ section: Unit2Vocabulary2WritingSection
 };
 
 // --- Main Tab Component ---
-export const Unit2Vocabulary2Tab: React.FC<{ data: Unit2Vocabulary2Data | null }> = ({ data }) => {
+export const Unit3Vocabulary2Tab: React.FC<{ data: Unit3Vocabulary2Data | null }> = ({ data }) => {
     const [isTextVisible, setIsTextVisible] = useState(true);
 
     if (!data) {
@@ -127,11 +127,11 @@ export const Unit2Vocabulary2Tab: React.FC<{ data: Unit2Vocabulary2Data | null }
             </div>
 
             {vocabSection?.type === 'Vocabulary' && (
-                <VocabularySection section={vocabSection as Unit2Vocabulary2VocabSection} isTextVisible={isTextVisible} />
+                <VocabularySection section={vocabSection as Unit3Vocabulary2VocabSection} isTextVisible={isTextVisible} />
             )}
             
             {writingSection?.type === 'Writing' && (
-                <FillInTheBlanksSection section={writingSection as Unit2Vocabulary2WritingSection} isTextVisible={isTextVisible} />
+                <FillInTheBlanksSection section={writingSection as Unit3Vocabulary2WritingSection} isTextVisible={isTextVisible} />
             )}
         </div>
     );

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import type { WorkbookMatchActivity, WorkbookListenWrite } from '../../../types';
-import { ActivityCard, CheckAndResetButtons } from './shared';
+import { ActivityCard, CheckAndResetButtons,UserRecordingControls } from './shared';
 
 interface MatchActivityProps {
     data: WorkbookMatchActivity;
